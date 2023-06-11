@@ -23,7 +23,7 @@ modeshRouter.post("/:username", (req, res, next) => __awaiter(void 0, void 0, vo
         status: false,
         data: [],
         message: "Something went wrong try again!",
-        function: "getAllNotes",
+        function: "ModeshHome",
     };
     const username = req.params.username;
     try {
@@ -45,7 +45,12 @@ modeshRouter.post("/:username", (req, res, next) => __awaiter(void 0, void 0, vo
     }
     catch (e) {
         const err = (0, utilsfunctions_1.errorToString)(e);
-        response = { status: false, data: [], message: err, function: "addNote" };
+        response = {
+            status: false,
+            data: [],
+            message: err,
+            function: "ModeshHome",
+        };
         res.send(response);
         res.end();
     }
